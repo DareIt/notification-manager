@@ -1,0 +1,17 @@
+{
+  "name": "Notification manager",
+  "description": "Notification manager",
+  "type": "project",
+  "autoload": {
+    "psr-4": {
+      "NotificationManager\\": "src",
+      "NotificationManager\\Tests\\": "tests"
+    }
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^6.4"
+  },
+  "require": {
+    "monolog/monolog": "^1.23"
+  }
+}
