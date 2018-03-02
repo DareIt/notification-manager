@@ -9,7 +9,7 @@ use NotificationManager\Notifications\NotificationInterface;
 use NotificationManager\Tests\TestHelpers\HandlerTestHelper;
 use NotificationManager\Tests\TestHelpers\LoggerTestHelper;
 use NotificationManager\Tests\TestHelpers\NotificationTestHelper;
-use NotificationManager\Tests\TestHelpers\WriterTestHelper;
+use NotificationManager\Tests\TestHelpers\NotifierTestHelper;
 use PHPUnit\Framework\TestCase;
 
 final class NotificationManagerTest extends TestCase
@@ -31,8 +31,8 @@ final class NotificationManagerTest extends TestCase
         $notificationManager = new NotificationManager($notificationHandlerMap, $testLogger);
         $notificationManager->dispatch($notification);
 
-        $this->assertCount(1, WriterTestHelper::$notifications);
-        $notifications = WriterTestHelper::$notifications;
+        $this->assertCount(1, NotifierTestHelper::$notifications);
+        $notifications = NotifierTestHelper::$notifications;
         $notification = array_shift($notifications);
         $this->assertInstanceOf(NotificationInterface::class, $notification);
     }

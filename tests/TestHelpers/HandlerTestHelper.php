@@ -22,8 +22,8 @@ final class HandlerTestHelper
         $handler->method('handle')->willReturnCallback(function (NotificationInterface $notification) use ($testCase
         ): void {
 
-            $writer = WriterTestHelper::get($testCase);
-            $writer->write($notification);
+            $writer = NotifierTestHelper::get($testCase);
+            $writer->notify($notification);
         });
 
         return $handler;

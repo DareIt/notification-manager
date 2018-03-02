@@ -10,5 +10,5 @@ interface NotifierInterface
     /**
      * @param NotificationInterface $notification
      */
-    public function write(NotificationInterface $notification): void;
+    public function notify(NotificationInterface $notification): void;
 }

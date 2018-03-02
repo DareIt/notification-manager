@@ -3,6 +3,7 @@ declare(strict_types=1);
 
 namespace NotificationManager\Tests\TestHelpers;
 
+use NotificationManager\Notifications\AbstractSlackNotification;
 use NotificationManager\Notifications\NotificationInterface;
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
@@ -25,6 +26,18 @@ final class NotificationTestHelper
                 $notification->$key = $value;
             }
         }
+
+        return $notification;
+    }
+
+    /**
+     * @param TestCase $testCase
+     * @return AbstractSlackNotification
+     */
+    public static function getSlack(TestCase $testCase): AbstractSlackNotification
+    {
+        /** @var MockObject|AbstractSlackNotification $notification */
+        $notification = $testCase->getMockBuilder(AbstractSlackNotification::class)->setConstructorArgs(['foo', 'bar'])->getMockForAbstractClass();
 
         return $notification;
     }
