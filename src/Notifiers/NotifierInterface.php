@@ -1,10 +1,10 @@
 <?php
 
-namespace NotificationManager\Writers;
+namespace NotificationManager\Notifiers;
 
 use NotificationManager\Notifications\NotificationInterface;
 
-interface WriterInterface
+interface NotifierInterface
 {
 
     /**
