@@ -13,6 +13,7 @@
   },
   "require": {
     "monolog/monolog": "^1.23",
-    "maknz/slack": "^1.7"
+    "maknz/slack": "^1.7",
+    "swiftmailer/swiftmailer": "^6.0"
   }
 }
