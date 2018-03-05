@@ -1,7 +1,7 @@
 {
   "name": "dareit/notification-manager",
   "description": "Notification manager",
-  "type": "project",
+  "type": "library",
   "autoload": {
     "psr-4": {
       "DareIt\\NotificationManager\\": "src",
@@ -15,5 +15,6 @@
     "monolog/monolog": "^1.23",
     "maknz/slack": "^1.7",
     "swiftmailer/swiftmailer": "^6.0"
-  }
+  },
+  "license": "MIT"
 }
