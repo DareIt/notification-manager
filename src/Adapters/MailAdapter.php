@@ -27,9 +27,8 @@ final class MailAdapter implements AdapterInterface
      */
     public function notify(NotificationInterface $notification): void
     {
-
         if(!$notification instanceof MailNotificationInterface){
-            //TODO throw ex
+            return;
         }
 
         $message = (new \Swift_Message('Wonderful Subject'))
