@@ -4,7 +4,7 @@ declare(strict_types=1);
 namespace NotificationManager\Tests\TestHelpers;
 
 use NotificationManager\Notifications\NotificationInterface;
-use NotificationManager\Notifiers\NotifierInterface;
+use NotificationManager\Adapters\AdapterInterface;
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
 
@@ -15,14 +15,14 @@ final class NotifierTestHelper
 
     /**
      * @param TestCase $testCase
-     * @return NotifierInterface
+     * @return AdapterInterface
      */
-    public static function get(TestCase $testCase): NotifierInterface
+    public static function get(TestCase $testCase): AdapterInterface
     {
         self::$notifications = [];
 
-        /** @var MockObject|NotifierInterface $writer */
-        $writer = $testCase->getMockBuilder(NotifierInterface::class)->getMock();
+        /** @var MockObject|AdapterInterface $writer */
+        $writer = $testCase->getMockBuilder(AdapterInterface::class)->getMock();
         $writer->method('notify')->willReturnCallback(function (NotificationInterface $notification) {
             self::$notifications[] = $notification;
         });

@@ -1,20 +1,20 @@
 <?php
 declare(strict_types=1);
 
-namespace NotificationManager\Notifiers;
+namespace NotificationManager\Adapters;
 
 use Maknz\Slack\Client;
 use Maknz\Slack\Message;
 use NotificationManager\Notifications\AbstractSlackNotification;
 use NotificationManager\Notifications\NotificationInterface;
 
-final class SlackNotifier implements NotifierInterface
+final class SlackAdapter implements AdapterInterface
 {
     /** @var Client */
     private $slackClient;
 
     /**
-     * SlackNotifier constructor.
+     * SlackAdapter constructor.
      * @param Client $slackClient
      */
     public function __construct(Client $slackClient)

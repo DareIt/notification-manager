@@ -1,10 +1,10 @@
 <?php
 
-namespace NotificationManager\Notifiers;
+namespace NotificationManager\Adapters;
 
 use NotificationManager\Notifications\NotificationInterface;
 
-interface NotifierInterface
+interface AdapterInterface
 {
 
     /**

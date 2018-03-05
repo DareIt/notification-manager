@@ -1,14 +1,14 @@
 <?php
 declare(strict_types=1);
 
-namespace NotificationManager\Tests\Writers;
+namespace NotificationManager\Tests\Adapters;
 
-use NotificationManager\Notifiers\SlackNotifier;
+use NotificationManager\Adapters\SlackAdapter;
 use NotificationManager\Tests\TestHelpers\NotificationTestHelper;
 use NotificationManager\Tests\TestHelpers\SlackClientTestHelper;
 use PHPUnit\Framework\TestCase;
 
-final class SlackNotifierTest extends TestCase
+final class SlackAdaptersTest extends TestCase
 {
     /**
      * @test
@@ -16,7 +16,7 @@ final class SlackNotifierTest extends TestCase
     public function canNotifyBySlackOnNotification()
     {
         $client = SlackClientTestHelper::get($this);
-        $slackNotifier = new SlackNotifier($client);
+        $slackNotifier = new SlackAdapter($client);
 
         $slackNotification = NotificationTestHelper::getSlack($this);
         $slackNotifier->notify($slackNotification);
