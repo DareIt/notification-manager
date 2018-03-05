@@ -46,9 +46,9 @@ final class HandlerTestHelper
     {
         /** @var MockObject|MailHandlerInterface $mailHandler */
         $mailHandler = $testCase->getMockBuilder(MailHandlerInterface::class)->getMock();
-        $mailHandler->method('handle')->willReturnCallback(function (MailNotificationInterface $mailNotification) {
+        $mailHandler->method('handle')->willReturnCallback(function (MailNotificationInterface $mailNotification)use ($testCase) {
 
-            $writer = new MailAdapter();
+            $writer = new MailAdapter(AdapterTestHelper::getMailClient($testCase));
             $writer->notify($mailNotification);
 
             self::$handledNotification = null;
