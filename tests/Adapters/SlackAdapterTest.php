@@ -8,7 +8,7 @@ use NotificationManager\Tests\TestHelpers\NotificationTestHelper;
 use NotificationManager\Tests\TestHelpers\SlackClientTestHelper;
 use PHPUnit\Framework\TestCase;
 
-final class SlackAdaptersTest extends TestCase
+final class SlackAdapterTest extends TestCase
 {
     /**
      * @test

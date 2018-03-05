@@ -5,11 +5,12 @@ namespace NotificationManager\Tests\Manager;
 
 use NotificationManager\Map\InMemoryNotificationHandlerMap;
 use NotificationManager\NotificationManager;
+use NotificationManager\Notifications\MailNotificationInterface;
 use NotificationManager\Notifications\NotificationInterface;
 use NotificationManager\Tests\TestHelpers\HandlerTestHelper;
 use NotificationManager\Tests\TestHelpers\LoggerTestHelper;
 use NotificationManager\Tests\TestHelpers\NotificationTestHelper;
-use NotificationManager\Tests\TestHelpers\NotifierTestHelper;
+use NotificationManager\Tests\TestHelpers\AdapterTestHelper;
 use PHPUnit\Framework\TestCase;
 
 final class NotificationManagerTest extends TestCase
@@ -17,24 +18,52 @@ final class NotificationManagerTest extends TestCase
     /**
      * @test
      */
-    public function canHandelNotificationEnWriteThem()
+    public function canHandelNotification()
     {
         $handler = HandlerTestHelper::get($this);
         $testData = ['foo' => 'foo', 'bar' => 'bar', 'fooBar' => 'fooBar'];
         $notification = NotificationTestHelper::get($this, $testData);
 
         $notificationHandlerMap = new InMemoryNotificationHandlerMap();
-        $notificationHandlerMap->mapNotificationAndHandler($notification, $handler);
+        $notificationHandlerMap->mapNotificationToHandler($notification, $handler);
 
         $testLogger = LoggerTestHelper::get();
 
         $notificationManager = new NotificationManager($notificationHandlerMap, $testLogger);
         $notificationManager->dispatch($notification);
 
-        $this->assertCount(1, NotifierTestHelper::$notifications);
-        $notifications = NotifierTestHelper::$notifications;
+        $this->assertCount(1, AdapterTestHelper::$notifications);
+        $notifications = AdapterTestHelper::$notifications;
         $notification = array_shift($notifications);
         $this->assertInstanceOf(NotificationInterface::class, $notification);
+    }
+
+    /**
+     * @test
+     */
+    public function canHandleMailNotification()
+    {
+        $mailNotification = NotificationTestHelper::getMail($this);
+
+        $mailHandler = HandlerTestHelper::getMail($this);
+
+        $notificationHandlerMap = new InMemoryNotificationHandlerMap();
+        $notificationHandlerMap->mapNotificationToHandler($mailNotification, $mailHandler);
+
+        $testLogger = LoggerTestHelper::get();
+
+        $notificationManager = new NotificationManager($notificationHandlerMap, $testLogger);
+        $notificationManager->dispatch($mailNotification);
+
+        $this->assertInstanceOf(MailNotificationInterface::class, HandlerTestHelper::$handledNotification);
+    }
+
+    /**
+     * @test
+     */
+    public function canHandleSlackNotification()
+    {
+        $this->assertTrue(true);
     }
 
 }

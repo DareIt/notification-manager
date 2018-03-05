@@ -24,7 +24,7 @@ final class InMemoryNotificationHandlerMap implements NotificationHandlerMapInte
      * @param NotificationInterface $notification
      * @param HandlerInterface      $handler
      */
-    public function mapNotificationAndHandler(NotificationInterface $notification, HandlerInterface $handler): void
+    public function mapNotificationToHandler(NotificationInterface $notification, HandlerInterface $handler): void
     {
         $this->notificationHandlerCollection[get_class($notification)] = $handler;
     }

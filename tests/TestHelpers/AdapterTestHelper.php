@@ -8,9 +8,9 @@ use NotificationManager\Adapters\AdapterInterface;
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
 
-final class NotifierTestHelper
+final class AdapterTestHelper
 {
-    /** @var NotificationInterface[] */
+    /** @var array */
     public static $notifications;
 
     /**
@@ -28,5 +28,24 @@ final class NotifierTestHelper
         });
 
         return $writer;
+    }
+
+    /**
+     * @param TestCase $testCase
+     * @return \Swift_Transport
+     */
+    public static function getMailClient(TestCase $testCase): \Swift_Transport
+    {
+        self::$notifications = [];
+
+        /** @var MockObject|\Swift_Transport $transport */
+        $transport = $testCase->getMockBuilder(\Swift_Transport::class)->getMock();
+
+        $transport->method('send')->willReturnCallback(function (\Swift_Mime_SimpleMessage $message){
+            self::$notifications[] = $message;
+        });
+
+        return $transport;
+
     }
 }
