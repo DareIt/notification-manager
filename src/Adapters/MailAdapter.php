@@ -1,11 +1,11 @@
 <?php
 declare(strict_types=1);
 
-namespace NotificationManager\Adapters;
+namespace DareIt\NotificationManager\Adapters;
 
-use NotificationManager\Notifications\AbstractMailNotification;
-use NotificationManager\Notifications\MailNotificationInterface;
-use NotificationManager\Notifications\NotificationInterface;
+use DareIt\NotificationManager\Notifications\AbstractMailNotification;
+use DareIt\NotificationManager\Notifications\MailNotificationInterface;
+use DareIt\NotificationManager\Notifications\NotificationInterface;
 
 final class MailAdapter implements AdapterInterface
 {

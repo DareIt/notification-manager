@@ -1,8 +1,8 @@
 <?php
 
-namespace NotificationManager\Handlers;
+namespace DareIt\NotificationManager\Handlers;
 
-use NotificationManager\Notifications\NotificationInterface;
+use DareIt\NotificationManager\Notifications\NotificationInterface;
 
 interface HandlerInterface
 {

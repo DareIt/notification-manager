@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace NotificationManager\Notifications;
+namespace DareIt\NotificationManager\Notifications;
 
 abstract class AbstractSlackNotification implements SlackNotificationInterface
 {

@@ -1,11 +1,11 @@
 {
-  "name": "Notification manager",
+  "name": "dareit/notification-manager",
   "description": "Notification manager",
   "type": "project",
   "autoload": {
     "psr-4": {
-      "NotificationManager\\": "src",
-      "NotificationManager\\Tests\\": "tests"
+      "DareIt\\NotificationManager\\": "src",
+      "DareIt\\NotificationManager\\Tests\\": "tests"
     }
   },
   "require-dev": {

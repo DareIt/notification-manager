@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace NotificationManager\Exceptions;
+namespace DareIt\NotificationManager\Exceptions;
 
 final class NotFoundNotificationException extends \Exception
 {

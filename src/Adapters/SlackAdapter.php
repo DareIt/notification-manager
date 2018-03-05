@@ -1,12 +1,12 @@
 <?php
 declare(strict_types=1);
 
-namespace NotificationManager\Adapters;
+namespace DareIt\NotificationManager\Adapters;
 
 use Maknz\Slack\Client;
 use Maknz\Slack\Message;
-use NotificationManager\Notifications\AbstractSlackNotification;
-use NotificationManager\Notifications\NotificationInterface;
+use DareIt\NotificationManager\Notifications\AbstractSlackNotification;
+use DareIt\NotificationManager\Notifications\NotificationInterface;
 
 final class SlackAdapter implements AdapterInterface
 {

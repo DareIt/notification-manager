@@ -1,8 +1,8 @@
 <?php
 
-namespace NotificationManager\Adapters;
+namespace DareIt\NotificationManager\Adapters;
 
-use NotificationManager\Notifications\NotificationInterface;
+use DareIt\NotificationManager\Notifications\NotificationInterface;
 
 interface AdapterInterface
 {

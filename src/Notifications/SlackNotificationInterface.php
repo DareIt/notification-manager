@@ -1,6 +1,6 @@
 <?php
 
-namespace NotificationManager\Notifications;
+namespace DareIt\NotificationManager\Notifications;
 
 interface SlackNotificationInterface extends NotificationInterface
 {

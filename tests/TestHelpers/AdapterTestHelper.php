@@ -1,10 +1,10 @@
 <?php
 declare(strict_types=1);
 
-namespace NotificationManager\Tests\TestHelpers;
+namespace DareIt\NotificationManager\Tests\TestHelpers;
 
-use NotificationManager\Notifications\NotificationInterface;
-use NotificationManager\Adapters\AdapterInterface;
+use DareIt\NotificationManager\Notifications\NotificationInterface;
+use DareIt\NotificationManager\Adapters\AdapterInterface;
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
 

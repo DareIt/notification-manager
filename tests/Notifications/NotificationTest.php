@@ -1,14 +1,14 @@
 <?php
 declare(strict_types=1);
 
-namespace NotificationManager\Tests\Notifications;
+namespace DareIt\NotificationManager\Tests\Notifications;
 
-use NotificationManager\Notifications\AbstractMailNotification;
-use NotificationManager\Notifications\AbstractSlackNotification;
-use NotificationManager\Notifications\MailNotificationInterface;
-use NotificationManager\Notifications\NotificationInterface;
-use NotificationManager\Notifications\SlackNotificationInterface;
-use NotificationManager\Tests\TestHelpers\NotificationTestHelper;
+use DareIt\NotificationManager\Notifications\AbstractMailNotification;
+use DareIt\NotificationManager\Notifications\AbstractSlackNotification;
+use DareIt\NotificationManager\Notifications\MailNotificationInterface;
+use DareIt\NotificationManager\Notifications\NotificationInterface;
+use DareIt\NotificationManager\Notifications\SlackNotificationInterface;
+use DareIt\NotificationManager\Tests\TestHelpers\NotificationTestHelper;
 use PHPUnit\Framework\TestCase;
 
 final class NotificationTest extends TestCase

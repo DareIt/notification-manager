@@ -1,9 +1,9 @@
 <?php
 
-namespace NotificationManager\Map;
+namespace DareIt\NotificationManager\Map;
 
-use NotificationManager\Handlers\HandlerInterface;
-use NotificationManager\Notifications\NotificationInterface;
+use DareIt\NotificationManager\Handlers\HandlerInterface;
+use DareIt\NotificationManager\Notifications\NotificationInterface;
 
 interface NotificationHandlerMapInterface
 {

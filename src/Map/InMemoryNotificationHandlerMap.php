@@ -1,11 +1,11 @@
 <?php
 declare(strict_types=1);
 
-namespace NotificationManager\Map;
+namespace DareIt\NotificationManager\Map;
 
-use NotificationManager\Exceptions\NotFoundNotificationException;
-use NotificationManager\Handlers\HandlerInterface;
-use NotificationManager\Notifications\NotificationInterface;
+use DareIt\NotificationManager\Exceptions\NotFoundNotificationException;
+use DareIt\NotificationManager\Handlers\HandlerInterface;
+use DareIt\NotificationManager\Notifications\NotificationInterface;
 
 final class InMemoryNotificationHandlerMap implements NotificationHandlerMapInterface
 {

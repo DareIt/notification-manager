@@ -1,6 +1,6 @@
 <?php
 
-namespace NotificationManager\Handlers;
+namespace DareIt\NotificationManager\Handlers;
 
 interface MailHandlerInterface extends HandlerInterface
 {

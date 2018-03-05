@@ -1,11 +1,11 @@
 <?php
 declare(strict_types=1);
 
-namespace NotificationManager\Tests\Adapters;
+namespace DareIt\NotificationManager\Tests\Adapters;
 
-use NotificationManager\Adapters\SlackAdapter;
-use NotificationManager\Tests\TestHelpers\NotificationTestHelper;
-use NotificationManager\Tests\TestHelpers\SlackClientTestHelper;
+use DareIt\NotificationManager\Adapters\SlackAdapter;
+use DareIt\NotificationManager\Tests\TestHelpers\NotificationTestHelper;
+use DareIt\NotificationManager\Tests\TestHelpers\SlackClientTestHelper;
 use PHPUnit\Framework\TestCase;
 
 final class SlackAdapterTest extends TestCase

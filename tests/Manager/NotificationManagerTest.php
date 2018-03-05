@@ -1,16 +1,16 @@
 <?php
 declare(strict_types=1);
 
-namespace NotificationManager\Tests\Manager;
+namespace DareIt\NotificationManager\Tests\Manager;
 
-use NotificationManager\Map\InMemoryNotificationHandlerMap;
-use NotificationManager\NotificationManager;
-use NotificationManager\Notifications\MailNotificationInterface;
-use NotificationManager\Notifications\NotificationInterface;
-use NotificationManager\Tests\TestHelpers\HandlerTestHelper;
-use NotificationManager\Tests\TestHelpers\LoggerTestHelper;
-use NotificationManager\Tests\TestHelpers\NotificationTestHelper;
-use NotificationManager\Tests\TestHelpers\AdapterTestHelper;
+use DareIt\NotificationManager\Map\InMemoryNotificationHandlerMap;
+use DareIt\NotificationManager\NotificationManager;
+use DareIt\NotificationManager\Notifications\MailNotificationInterface;
+use DareIt\NotificationManager\Notifications\NotificationInterface;
+use DareIt\NotificationManager\Tests\TestHelpers\HandlerTestHelper;
+use DareIt\NotificationManager\Tests\TestHelpers\LoggerTestHelper;
+use DareIt\NotificationManager\Tests\TestHelpers\NotificationTestHelper;
+use DareIt\NotificationManager\Tests\TestHelpers\AdapterTestHelper;
 use PHPUnit\Framework\TestCase;
 
 final class NotificationManagerTest extends TestCase

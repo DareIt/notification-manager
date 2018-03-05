@@ -1,10 +1,10 @@
 <?php
 declare(strict_types=1);
 
-namespace NotificationManager;
+namespace DareIt\NotificationManager;
 
-use NotificationManager\Map\NotificationHandlerMapInterface;
-use NotificationManager\Notifications\NotificationInterface;
+use DareIt\NotificationManager\Map\NotificationHandlerMapInterface;
+use DareIt\NotificationManager\Notifications\NotificationInterface;
 use Psr\Log\LoggerInterface;
 
 final class NotificationManager

@@ -1,11 +1,11 @@
 <?php
 declare(strict_types=1);
 
-namespace NotificationManager\Tests\Adapters;
+namespace DareIt\NotificationManager\Tests\Adapters;
 
-use NotificationManager\Adapters\MailAdapter;
-use NotificationManager\Tests\TestHelpers\AdapterTestHelper;
-use NotificationManager\Tests\TestHelpers\NotificationTestHelper;
+use DareIt\NotificationManager\Adapters\MailAdapter;
+use DareIt\NotificationManager\Tests\TestHelpers\AdapterTestHelper;
+use DareIt\NotificationManager\Tests\TestHelpers\NotificationTestHelper;
 use PHPUnit\Framework\TestCase;
 
 final class MailAdapterTest extends TestCase

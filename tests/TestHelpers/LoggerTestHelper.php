@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace NotificationManager\Tests\TestHelpers;
+namespace DareIt\NotificationManager\Tests\TestHelpers;
 
 use Monolog\Handler\TestHandler;
 use Monolog\Logger;

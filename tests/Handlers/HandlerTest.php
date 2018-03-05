@@ -1,11 +1,11 @@
 <?php
 declare(strict_types=1);
 
-namespace NotificationManager\Tests\Handlers;
+namespace DareIt\NotificationManager\Tests\Handlers;
 
-use NotificationManager\Notifications\NotificationInterface;
-use NotificationManager\Tests\TestHelpers\HandlerTestHelper;
-use NotificationManager\Tests\TestHelpers\NotificationTestHelper;
+use DareIt\NotificationManager\Notifications\NotificationInterface;
+use DareIt\NotificationManager\Tests\TestHelpers\HandlerTestHelper;
+use DareIt\NotificationManager\Tests\TestHelpers\NotificationTestHelper;
 use PHPUnit\Framework\TestCase;
 
 final class HandlerTest extends TestCase
