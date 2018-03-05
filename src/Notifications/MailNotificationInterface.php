@@ -2,9 +2,7 @@
 
 namespace NotificationManager\Notifications;
 
-use NotificationManager\Adapters\AdapterInterface;
-
-interface MailNotificationInterface extends AdapterInterface
+interface MailNotificationInterface extends NotificationInterface
 {
 
 }
