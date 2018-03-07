@@ -8,7 +8,6 @@ use DareIt\NotificationManager\NotificationManager;
 use DareIt\NotificationManager\Notifications\MailNotificationInterface;
 use DareIt\NotificationManager\Notifications\NotificationInterface;
 use DareIt\NotificationManager\Tests\TestHelpers\HandlerTestHelper;
-use DareIt\NotificationManager\Tests\TestHelpers\LoggerTestHelper;
 use DareIt\NotificationManager\Tests\TestHelpers\NotificationTestHelper;
 use DareIt\NotificationManager\Tests\TestHelpers\AdapterTestHelper;
 use PHPUnit\Framework\TestCase;
@@ -27,9 +26,7 @@ final class NotificationManagerTest extends TestCase
         $notificationHandlerMap = new InMemoryNotificationHandlerMap();
         $notificationHandlerMap->mapNotificationToHandler($notification, $handler);
 
-        $testLogger = LoggerTestHelper::get();
-
-        $notificationManager = new NotificationManager($notificationHandlerMap, $testLogger);
+        $notificationManager = new NotificationManager($notificationHandlerMap);
         $notificationManager->dispatch($notification);
 
         $this->assertCount(1, AdapterTestHelper::$notifications);
@@ -50,9 +47,7 @@ final class NotificationManagerTest extends TestCase
         $notificationHandlerMap = new InMemoryNotificationHandlerMap();
         $notificationHandlerMap->mapNotificationToHandler($mailNotification, $mailHandler);
 
-        $testLogger = LoggerTestHelper::get();
-
-        $notificationManager = new NotificationManager($notificationHandlerMap, $testLogger);
+        $notificationManager = new NotificationManager($notificationHandlerMap);
         $notificationManager->dispatch($mailNotification);
 
         $this->assertInstanceOf(MailNotificationInterface::class, HandlerTestHelper::$handledNotification);

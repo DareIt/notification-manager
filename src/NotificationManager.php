@@ -12,18 +12,13 @@ final class NotificationManager
     /** @var NotificationHandlerMapInterface */
     private $notificationHandlerMap;
 
-    /** @var LoggerInterface */
-    private $logger;
-
     /**
      * NotificationManager constructor.
      * @param NotificationHandlerMapInterface $notificationHandlerMap
-     * @param LoggerInterface                 $logger
      */
-    public function __construct(NotificationHandlerMapInterface $notificationHandlerMap, LoggerInterface $logger)
+    public function __construct(NotificationHandlerMapInterface $notificationHandlerMap)
     {
         $this->notificationHandlerMap = $notificationHandlerMap;
-        $this->logger = $logger;
     }
 
     /**
