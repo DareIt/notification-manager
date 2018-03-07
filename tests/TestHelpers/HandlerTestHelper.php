@@ -6,6 +6,7 @@ namespace DareIt\NotificationManager\Tests\TestHelpers;
 use DareIt\NotificationManager\Adapters\MailAdapter;
 use DareIt\NotificationManager\Handlers\HandlerInterface;
 use DareIt\NotificationManager\Handlers\MailHandlerInterface;
+use DareIt\NotificationManager\Models\MailSettings;
 use DareIt\NotificationManager\Notifications\MailNotificationInterface;
 use DareIt\NotificationManager\Notifications\NotificationInterface;
 use PHPUnit\Framework\MockObject\MockObject;
@@ -46,9 +47,16 @@ final class HandlerTestHelper
     {
         /** @var MockObject|MailHandlerInterface $mailHandler */
         $mailHandler = $testCase->getMockBuilder(MailHandlerInterface::class)->getMock();
-        $mailHandler->method('handle')->willReturnCallback(function (MailNotificationInterface $mailNotification)use ($testCase) {
+        $mailHandler->method('handle')->willReturnCallback(function (MailNotificationInterface $mailNotification) use (
+            $testCase
+        ) {
+            $mailSettings = new MailSettings(
+                'SubjectA',
+                'Foo',
+                'foo@bar.in'
+            );
 
-            $writer = new MailAdapter(AdapterTestHelper::getMailClient($testCase));
+            $writer = new MailAdapter(AdapterTestHelper::getMailClient($testCase), $mailSettings);
             $writer->notify($mailNotification);
 
             self::$handledNotification = null;
